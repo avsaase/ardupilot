@@ -776,7 +776,7 @@ private:
     static const ServoTrimSetEntry dspoiler_outer_trim_set[2];
     static const ServoTrimSetEntry dspoiler_inner_trim_set[2];
 
-    #define SERVOS_TRIM_SET_ENTRIES_COUNT(name) (sizeof(name##_trim_set) / sizeof(*name##_trim_set))
+    #define SERVOS_TRIM_SET_ENTRIES_COUNT(name) ARRAY_SIZE(name##_trim_set)
     #define SERVOS_TRIM_SET_STATUS(name) auto_trim.set_status.name
     #define SERVOS_TRIM_SET_EXT(name, apply_pitch) servos_auto_trim_set(name##_trim_set, SERVOS_TRIM_SET_ENTRIES_COUNT(name), pitch_I, roll_I, SERVOS_TRIM_SET_STATUS(name).adjustment, SERVOS_TRIM_SET_STATUS(name).saturation, apply_pitch);
     #define SERVOS_TRIM_SET(name) SERVOS_TRIM_SET_EXT(name, true)
